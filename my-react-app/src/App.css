@@ -1,63 +1,89 @@
-#root {
-  max-width: 1280px;
+/* Page background */
+body {
+  background: #f5f6fa;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Grid layout for contact cards */
+.contacts-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 32px;
+  padding: 40px;
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 2rem;
+}
+
+/* Contact card styles */
+.contact-card {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(60,60,60,0.10);
+  padding: 24px 18px 18px 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: box-shadow 0.2s;
+}
+
+.contact-card:hover {
+  box-shadow: 0 8px 24px rgba(60,60,60,0.18);
+}
+
+/* Contact image */
+.contact-card img {
+  width: 220px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 18px;
+  background: #222;
+}
+
+/* Contact name */
+.contact-card h3 {
+  font-size: 1.35rem;
+  font-weight: 700;
+  margin: 0 0 12px 0;
+  color: #222;
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
-}
-header {
-  background: #f55a5a;
+/* Info group (icon + text) */
+.info-group {
   display: flex;
   align-items: center;
-  justify-content: center;
-  padding: 20px 0;
-  gap: 10px;
+  margin-bottom: 8px;
+  width: 100%;
+  justify-content: flex-start;
 }
 
-.header-image {
-  width: 30px;
-  height: 30px;
+.info-group img {
+  width: 22px;
+  height: 22px;
+  margin-right: 10px;
+  filter: grayscale(100%);
 }
 
-header h1 {
-  color: #fff;
-  font-size: 1.5rem;
-  font-weight: 500;
+.info-group p {
+  font-size: 1rem;
+  color: #222;
   margin: 0;
-  letter-spacing: 2px;
+  font-family: inherit;
+}
+
+/* Responsive adjustments */
+@media (max-width: 700px) {
+  .contacts-container {
+    grid-template-columns: 1fr;
+    padding: 16px;
+    gap: 20px;
+  }
+  .contact-card img {
+    width: 100%;
+    height: auto;
+    max-width: 320px;
+  }
 }
