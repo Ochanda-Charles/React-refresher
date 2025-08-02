@@ -2,7 +2,7 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-import Contact from '../components/contact.jsx'
+import Jokes from '../components/jokes.jsx'
 
 
 function App() {
@@ -10,7 +10,7 @@ function App() {
 
   return (
     <>
-      <div className="contacts-container">
+      {/* <div className="contacts-container">
         <Contact 
         img=""
         name="Mr. Whiskerson"
@@ -35,7 +35,29 @@ function App() {
         phone="(212) 555-1234"
         email="mrwizcaz@catnap.meow"
         />
-      </div>
+      </div> */}
+      <div className="jokes-list">
+
+
+        <Jokes
+        punchline = "Conditional rendering is when you render a component based on a condition."
+        />
+        <Jokes 
+        setup = "I got my daughter a fridge for her birthday."
+        punchline = "I can't wait to see her face light up when she opens it."
+        
+        />
+        <Jokes
+        setup = "How did the hacker escape the police?"
+        punchline = "He just ransomware!"
+         
+        />
+        <Jokes 
+        setup = "Why don't pirates travel on mountain roads?."
+        punchline = "Scurvy."
+        />
+
+        </div>
     </>
     )
 }

@@ -1,89 +1,72 @@
-/* Page background */
 body {
-  background: #f5f6fa;
-  font-family: 'Segoe UI', Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-}
-
-/* Grid layout for contact cards */
-.contacts-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 32px;
-  padding: 40px;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-/* Contact card styles */
-.contact-card {
-  background: #fff;
-  border-radius: 16px;
-  box-shadow: 0 4px 16px rgba(60,60,60,0.10);
-  padding: 24px 18px 18px 18px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  min-height: 100vh;
+  background: #f5f6fa;
+  margin: 0;
+}
+
+/* Center the jokes-list container horizontally */
+.jokes-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center cards horizontally */
+  justify-content: center;
+  gap: 32px;
+  padding: 40px 0;
+  width: 100vw;
+}
+
+/* Individual joke card */
+.contact-card {
+  width: 75vw;
+  max-width: 900px;
+  background: #fff;
+  border-radius: 24px;
+  box-shadow: 0 6px 32px rgba(60,60,60,0.10);
+  padding: 32px 28px;
+  margin: 0 auto; /* Center card horizontally */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; /* Center joke text inside card */
   transition: box-shadow 0.2s;
 }
 
-.contact-card:hover {
-  box-shadow: 0 8px 24px rgba(60,60,60,0.18);
-}
-
-/* Contact image */
-.contact-card img {
-  width: 220px;
-  height: 160px;
-  object-fit: cover;
-  border-radius: 8px;
-  margin-bottom: 18px;
-  background: #222;
-}
-
-/* Contact name */
-.contact-card h3 {
-  font-size: 1.35rem;
-  font-weight: 700;
-  margin: 0 0 12px 0;
-  color: #222;
+.contact-card h3,
+.contact-card p {
   text-align: center;
 }
 
-/* Info group (icon + text) */
-.info-group {
-  display: flex;
-  align-items: center;
-  margin-bottom: 8px;
-  width: 100%;
-  justify-content: flex-start;
+.contact-card h3 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0 0 18px 0;
+  color: #222;
 }
 
-.info-group img {
-  width: 22px;
-  height: 22px;
-  margin-right: 10px;
-  filter: grayscale(100%);
-}
-
-.info-group p {
-  font-size: 1rem;
+.contact-card p {
+  font-size: 1.2rem;
+  font-weight: 500;
   color: #222;
   margin: 0;
-  font-family: inherit;
 }
 
-/* Responsive adjustments */
+.contact-card strong {
+  font-weight: 700;
+  color: #222;
+}
+
+/* Responsive for mobile */
 @media (max-width: 700px) {
-  .contacts-container {
-    grid-template-columns: 1fr;
-    padding: 16px;
-    gap: 20px;
+  .contact-card {
+    width: 95vw;
+    padding: 20px 10px;
+    font-size: 1rem;
   }
-  .contact-card img {
-    width: 100%;
-    height: auto;
-    max-width: 320px;
+  .jokes-list {
+    gap: 18px;
+    padding: 16px 0;
   }
 }
